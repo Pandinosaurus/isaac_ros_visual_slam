@@ -326,12 +326,12 @@ localize_in_map_srv_(
 impl_(std::make_unique<VisualSlamImpl>(*this))
 {
   // Dump and check cuVSLAM API version
-  int32_t cuvslam_major, cuvslam_minor;
-  auto cuvslam_version = cuvslam::GetVersion(&cuvslam_major, &cuvslam_minor);
+  int32_t cuvslam_major, cuvslam_minor, cuvslam_patch;
+  auto cuvslam_version = cuvslam::GetVersion(&cuvslam_major, &cuvslam_minor, &cuvslam_patch);
   RCLCPP_INFO(get_logger(), "cuVSLAM version: %s", std::string(cuvslam_version).c_str());
 
-  // VisualSlamNode is desined for this cuvslam sdk version:
-  int32_t exp_cuvslam_major = 14, exp_cuvslam_minor = 1;
+  // VisualSlamNode is designed for this cuvslam sdk version:
+  int32_t exp_cuvslam_major = 15, exp_cuvslam_minor = 0;
   if (cuvslam_major != exp_cuvslam_major || cuvslam_minor != exp_cuvslam_minor) {
     RCLCPP_FATAL(
       get_logger(), "VisualSlamNode is designed to work with cuVSLAM SDK v%d.%d",

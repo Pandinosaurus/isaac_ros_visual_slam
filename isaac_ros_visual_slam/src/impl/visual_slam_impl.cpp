@@ -131,7 +131,7 @@ VisualSlamNode::VisualSlamImpl::VisualSlamImpl(VisualSlamNode & vslam_node)
   localizer_helper(8 * 2048, 100),
   localizer_landmarks_vis_helper(cuvslam::Slam::DataLayer::LocalizerMap, 1024 * 32,
     LandmarksVisHelper::CM_GREEN_MODE, 16),
-  localizer_observations_vis_helper(cuvslam::Slam::DataLayer::LocalizerObservations, 1024 * 32,
+  localizer_observations_vis_helper(cuvslam::Slam::DataLayer::LocalizerLandmarks, 1024 * 32,
     LandmarksVisHelper::CM_WEIGHT_BW_MODE, 16),
   localizer_lc_landmarks_vis_helper(cuvslam::Slam::DataLayer::LocalizerLoopClosure, 2048,
     LandmarksVisHelper::CM_RED_MODE, 16),
